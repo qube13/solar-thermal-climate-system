@@ -19,6 +19,8 @@ services:
       # nginx config files
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf
       - ./nginx/http.conf:/etc/nginx/http.conf
+      # basic auth for Flink
+      - ./nginx/.htpasswd:/etc/nginx/.htpasswd
       - ${STCS_CONFIG_FOLDER-./../config}/nginx/conf.d:/etc/nginx/conf.d
       # password files
       - ${STCS_CONFIG_FOLDER-./../config}/nginx/htpasswd:/etc/nginx/htpasswd
